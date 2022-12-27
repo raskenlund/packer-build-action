@@ -5,13 +5,13 @@ set -e
 cd "${INPUT_WORKINGDIR:-.}"
 
 # Find the template file
-if ( [ ! -f "${INPUT_TEMPLATEFILE}" ] &&  $INPUT_TEMPLATEFILE != *.json ] ]); then
+if ( [ ! -f "${INPUT_TEMPLATEFILE}" ] &&  $INPUT_TEMPLATEFILE != *.pkr.hcl ] ]); then
     echo "${INPUT_TEMPLATEFILE} does not exit in the working directory (${INPUT_WORKINGDIR})"
     exit 1
 fi
 
 # Find the var file file and it should be a json file
-if [[ ! -f "${INPUT_VARFILE}" ]] && [[ $INPUT_VARFILE != *.json ]]; then
+if [[ ! -f "${INPUT_VARFILE}" ]] && [[ $INPUT_VARFILE != *.pkr.hcl ]]; then
     echo "$INPUT_VARFILE not found in the working directory (${INPUT_WORKINGDIR})"
     exit 1
 fi
