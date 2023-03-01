@@ -30,7 +30,8 @@ fi
 
 set +e
 # Run Packer init
-echo "Run Packer init"
+echo "Run Packer init (command preview below)"
+echo "sh -c 'packer init ${variableCommand} ${INPUT_TEMPLATEFILE}'"
 PACKER_INIT_OUTPUT=$(sh -c "packer init ${variableCommand} ${INPUT_TEMPLATEFILE}" 2>&1)
 echo "$PACKER_INIT_OUTPUT"
 echo "Ending running packer init ..."
